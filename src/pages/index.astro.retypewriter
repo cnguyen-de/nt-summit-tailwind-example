@@ -1,0 +1,75 @@
+reTypewriter Snapshots v1
+
+--01----------
+---
+import { novasummit } from '../../novasummit'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novatec Summit 2022</title>
+  </head>
+  <body>
+    <h1>Awesome talks of Novatec Summit 2022</h1>
+  </body>
+</html>
+
+--02----------
+---
+import { novasummit } from "../../novasummit";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novatec Summit 2022</title>
+  </head>
+  <body>
+    <h1>Awesome talks of Novatec Summit 2022</h1>
+    {
+      novasummit.map((section) => (
+	  	  <div>{section.time}</div>
+      ))
+    }
+  </body>
+</html>
+
+--03----------
+---
+import { novasummit } from "../../novasummit";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novatec Summit 2022</title>
+  </head>
+  <body>
+    <h1 class="">Awesome talks of Novatec Summit 2022</h1>
+    {
+      novasummit.map((section) => (
+	  	  <div class="">{section.time}</div>
+        <div class="">
+          {section.talks.map((talk) => (
+            <div class="">
+              <h2 class="">{talk.title}</h2>
+              <p class="">{talk.author}</p>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </body>
+</html>
+
+--04----------
