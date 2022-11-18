@@ -1,0 +1,36 @@
+---
+import { novasummit } from "../../novasummit";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novatec Summit 2022</title>
+  </head>
+  <body>
+    <div class="bg-gradient-to-br from-brand-teal/50 to-brand-blue/50">
+
+      <main class="p-4 max-w-5xl mx-auto">
+        <h1 class="text-5xl font-extrabold bg-gradient-to-r from-brand-red to-brand-purple bg-clip-text text-transparent p-8 text-center">Awesome talks of Novatec Summit 2022</h1>
+        {
+          novasummit.map((section) => (
+            <div class="text-center py-8 font-extrabold text-3xl tracking-wider">{section.time}</div>
+            <div class="grid grid-cols-3 gap-8">
+              {section.talks.map((talk) => (
+                <div class={`p-8 shadow-md rounded-xl bg-white 
+                  ${section.talks.length === 1 ? 'col-span-3 text-center' : ''}`
+                }>
+                  <h2 class="text-xl font-bold mb-2 line-clamp-3">{talk.title}</h2>
+                  <p class="">{talk.author}</p>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </main>
+    </div>
+  </body>
+</html>
